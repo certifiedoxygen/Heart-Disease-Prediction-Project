@@ -99,7 +99,7 @@ def main():
     
     Age = col1.selectbox("What is your Age?", options = list(age_groups.keys()), format_func = lambda x: age_groups[x])
     Sex = col1.selectbox("What is your Gender", options = list(gender.keys()), format_func = lambda x: gender[x])
-    Income = col1.selectbox("What is your annual household income?", options = list(income_ranges.keys()), format_func = lambda x: income_ranges[x])
+    Income = col1.selectbox("What is your annual household income($)?", options = list(income_ranges.keys()), format_func = lambda x: income_ranges[x])
 
     Diabetes = col1.radio("Do you have Diabetes?", options = list(yesno.keys()), format_func = lambda x: yesno[x])
     Stroke = col1.radio("Have you ever had a Stroke?", options = list(yesno.keys()), format_func = lambda x: yesno[x])
