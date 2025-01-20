@@ -2,6 +2,13 @@ import streamlit as st
 import joblib
 import numpy as np
 import pandas as pd
+from PIL import Image
+
+icon = Image.open("heart.png") 
+st.set_page_config(
+    page_title="Heart Disease Prediction", 
+    page_icon=icon 
+)
 
 
 age_groups = {
@@ -79,12 +86,11 @@ columns =   ['PhysHlth',
 
 
 def main():
-    st.set_page_config(page_title = "Heart Disease Prediction 🫀")
 
     st.markdown("## Heart Disease Prediction 🫀")
 
-    PhysHlth = st.slider("For how many days during the past 30 days was your Physical Health not good?", min_value = 1, max_value = 30, step = 1)
-    MentHlth = st.slider("For how many days during the past 30 days was your Mental Health not good?", min_value = 1, max_value = 30, step = 1)
+    PhysHlth = st.slider("For how many days during the past 30 days was your Physical Health not good?", min_value = 0, max_value = 30, step = 1)
+    MentHlth = st.slider("For how many days during the past 30 days was your Mental Health not good?", min_value = 0, max_value = 30, step = 1)
     Education = st.selectbox("What is the highest grade or year of school you completed?", options = list(education_levels.keys()), format_func = lambda x: education_levels[x])
 
 
