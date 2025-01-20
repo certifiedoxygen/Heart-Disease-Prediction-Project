@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#9e2a2b"      # Change to your desired primary color
+backgroundColor = "#ffffff"  # Change the app's background color
+secondaryBackgroundColor = "#ffffff"  # Change secondary backgrounds (e.g., sidebar)
+textColor = "#000000"        # Change default text color
+font = "sans serif"          # Choose from "serif", "sans serif", or "monospace"

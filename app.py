@@ -139,8 +139,8 @@ def main():
                 box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
                 line-height: 1.2;
             ">
-                <p style="color: #fff; margin: 0; font-size: 16px; font-weight: bold;">{risk_level}</p>
-                <p style="color: #fff; margin: 2px 0 0; font-size: 14px;">Probability: {prediction:.3f}</p>
+                <p style="color: #fff; margin: 0; font-size: 16px; font-weight: 600;">{risk_level}</p>
+                <p style="color: #fff; margin: 2px 0 0; font-size: 14px; font-weight: 400;">Probability: {prediction:.3f}</p>
             </div>
             """, unsafe_allow_html=True)
 
