@@ -38,6 +38,7 @@ This study leverages data from the Behavioral Risk Factor Surveillance System (B
 
   - Features were evaluated using Pearson correlation, chi-squared (chi²) scores, and mutual information scores.
   - Features with a chi² score above 250 were selected, aligning with the findings from Pearson correlation analysis.
+  
   ![Chi2 Scores](chi2_scores.png)
 
 - **Recursive Feature Elimination (RFE)**:
