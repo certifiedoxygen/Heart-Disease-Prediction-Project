@@ -96,21 +96,26 @@ def main():
 
 
     col1, col2= st.columns(2)
+
     
     Age = col1.selectbox("What is your Age?", options = list(age_groups.keys()), format_func = lambda x: age_groups[x])
     Sex = col1.selectbox("What is your Gender", options = list(gender.keys()), format_func = lambda x: gender[x])
-    Income = col1.selectbox("What is your annual household income($)?", options = list(income_ranges.keys()), format_func = lambda x: income_ranges[x])
+    Income = col1.selectbox("What is your annual household income(USD$)?", options = list(income_ranges.keys()), format_func = lambda x: income_ranges[x])
 
     Diabetes = col1.radio("Do you have Diabetes?", options = list(yesno.keys()), format_func = lambda x: yesno[x])
     Stroke = col1.radio("Have you ever had a Stroke?", options = list(yesno.keys()), format_func = lambda x: yesno[x])
     GenHlth = col2.selectbox("How would you rate your General Health?", options = list(quality_ratings.keys()), format_func = lambda x: quality_ratings[x])
-    BMI = col2.number_input("What is your BMI?", min_value = 5, max_value = 50, value = 25, step = 1)
+    inner_col1, inner_col2 = col2.columns(2)
+    height = inner_col1.number_input("Enter Height (cm) ", min_value = 20, max_value = 250, value = 165, step = 1)
+    weight = inner_col2.number_input("Enter Weight (kg) ", min_value = 10, max_value = 200, value = 60, step = 1)
 
     DiffWalk = col2.radio("Do you have serious difficulty walking or climbing stairs?", options = list(yesno.keys()), format_func = lambda x: yesno[x])
     HighBP = col2.radio("Do you have high blood pressure?", options = list(yesno.keys()), format_func = lambda x: yesno[x])
     HighCol = col2.radio("Do you have high Cholestrol", options = list(yesno.keys()), format_func = lambda x: yesno[x])
     Smoker = col1.radio("Have you had atleast 100 cigarettes in your entire life?", options = list(yesno.keys()), format_func = lambda x: yesno[x])
     PhysActivity = col2.radio("Have you engaged in Physical Activity in the past 30 days?", options = list(yesno.keys()), format_func = lambda x: yesno[x])
+
+    BMI = weight/((height/100)**2)
 
     def predict():
         row = np.array([PhysHlth, MentHlth, Age, Diabetes, Stroke, DiffWalk, GenHlth, HighBP, HighCol, Income, Smoker, BMI, Sex, Education, PhysActivity])
